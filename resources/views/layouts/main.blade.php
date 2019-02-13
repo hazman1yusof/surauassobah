@@ -18,7 +18,7 @@
     <title>Homepage - tabler.github.io - a responsive, flat and full featured admin template</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,500,500i,600,600i,700,700i&amp;subset=latin-ext">
-    <link type='text/css' href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
     <style type="text/css">
       @yield('styles')
     </style>
@@ -37,6 +37,7 @@
     @yield('script')
   </head>
   <body class="">
+    @yield('after-body')
     <div class="page">
       <div class="page-main">
         @include('layouts.header')

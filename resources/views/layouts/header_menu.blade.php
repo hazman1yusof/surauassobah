@@ -27,10 +27,13 @@
             </div>
           </li>
           <li class="nav-item">
-            <a href="\contact" class="nav-link {{(Request::is('contact') ? 'active' : '')}}"><i class="fe fe-radio"></i> Makluman</a>
+            <a href="\contact" class="nav-link {{(Request::is('contact') ? 'active' : '')}}"><i class="fe fe-radio"></i> Ahli Kariah</a>
           </li>
           <li class="nav-item">
             <a href="\donate" class="nav-link {{(Request::is('donate') ? 'active' : '')}}" ><i class="fe fe-monitor"></i> Galeri</a>
+          </li>
+          <li class="nav-item">
+            <a href="\login" class="nav-link {{(Request::is('login') ? 'active' : '')}}" ><i class="fe fe-user"></i> Admin</a>
           </li>
         </ul>
       </div>
