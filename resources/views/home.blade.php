@@ -244,9 +244,9 @@
   <div class="row">
       <div class="col-12">
         <div class="card">
-          <div class="card-status bg-green text-center"></div>
+          <div class="card-status bg-teal text-center"></div>
           <div class="card-header">
-            <h3 class="card-title">Ceramah Agama<span class="text-green"> Bulan January</span></h3>
+            <h3 class="card-title hidden-md-down">Ceramah Agama<span class="text-green"> Bulan January</span></h3>
             <div class="col-lg-3 ml-auto">
             <form class="input-icon my-3 my-lg-0 float-left">
               @csrf
@@ -288,60 +288,61 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
+                @foreach($ceramahs as $ceramah)
+                  <tr>
 
-                  <td class="text-center">
-                    <div class="avatar d-block" style="background-image: url(demo/faces/female/26.jpg)">
-                    </div>
-                  </td>
+                    <td class="text-center">
+                      <span class="avatar">{{$ceramah->fl}}</span>
+                    </td>
 
-                  <td>
-                    <div>Ust Harif Haron</div>
-                  </td>
-                  <td>
-                    <div class="clearfix">
-                      <div class="float-left">
-                        <strong>Tadabbur Al-fatihah</strong>
+                    <td>
+                      <div>{{$ceramah->penceramah}}</div>
+                    </td>
+                    <td>
+                      <div class="clearfix">
+                        <div class="float-left">
+                          <strong>{{$ceramah->tajuk}}</strong>
+                        </div>
+                        <div class="float-right">
+                          <small class="text-muted">mukasurat: {{$ceramah->mukasurat}}</small>
+                        </div>
                       </div>
-                      <div class="float-right">
-                        <small class="text-muted">mukasurat: 35</small>
+                      <div class="progress progress-xs">
+                        <div class="progress-bar bg-blue" role="progressbar" style="width: {{$ceramah->percent}}" aria-valuenow="42" aria-valuemin="0" aria-valuemax="100"></div>
                       </div>
-                    </div>
-                    <div class="progress progress-xs">
-                      <div class="progress-bar bg-yellow" role="progressbar" style="width: 42%" aria-valuenow="42" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </td>
-                  <td class="text-center">
-                    Subuh
-                  </td>
-                  <td>
-                    <div>01 Jan 2019</div>
-                    <div class="small text-muted">4 minutes ago</div>
-                  </td>
-                  <td class="text-center">
-                    <div>Tuesday</div>
-                  </td>
-                  <td class="text-center">
-                    <div>
-                        <ul class="social-links list-inline mb-0 mt-2">
-                          <li class="list-inline-item">
-                            <a href="javascript:void(0)" title="" data-toggle="tooltip" data-original-title="Facebook"><i class="fa fa-facebook"></i></a>
-                          </li>
-                          <li class="list-inline-item">
-                            <a href="javascript:void(0)" title="" data-toggle="tooltip" data-original-title="Youtube"><i class="fa fa-youtube"></i></a>
-                          </li>
-                        </ul>
-                    </div>
-                  </td>
-                  <td class="text-center">
-                    <div class="item-action dropdown">
-                      <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i class="fe fe-more-vertical"></i></a>
-                      <div class="dropdown-menu dropdown-menu-right">
-                        <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-tag"></i> Edit </a>
+                    </td>
+                    <td class="text-center">
+                      {{$ceramah->waktu}}
+                    </td>
+                    <td>
+                      <div>{{$ceramah->tarikh}}</div>
+                      <div class="small text-muted">{{$ceramah->diff}}</div>
+                    </td>
+                    <td class="text-center">
+                      <div>{{$ceramah->hari}}</div>
+                    </td>
+                    <td class="text-center">
+                      <div>
+                          <ul class="social-links list-inline mb-0 mt-2">
+                            <li class="list-inline-item">
+                              <a href="{{$ceramah->linkyoutube}}" title="" data-toggle="tooltip" data-original-title="Facebook"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                              <a href="{{$ceramah->linkfacebook}}" title="" data-toggle="tooltip" data-original-title="Youtube"><i class="fa fa-youtube"></i></a>
+                            </li>
+                          </ul>
                       </div>
-                    </div>
-                  </td>
-                </tr>
+                    </td>
+                    <td class="text-center">
+                      <div class="item-action dropdown">
+                        <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i class="fe fe-more-vertical"></i></a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                          <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-tag"></i> Edit </a>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                @endforeach
               </tbody>
             </table>
           </div>

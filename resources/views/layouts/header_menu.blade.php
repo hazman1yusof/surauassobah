@@ -11,26 +11,26 @@
           <li class="nav-item">
             <a href="\about" class="nav-link {{(Request::is('about') ? 'active' : '')}}" data-toggle="dropdown" href="javascript:void(0)" ><i class="fe fe-inbox"></i> Informasi</a>
             <div class="dropdown-menu dropdown-menu-arrow">
-              <a href="./cards.html" class="dropdown-item ">Sejarah Penubuhan</a>
-              <a href="./charts.html" class="dropdown-item ">Visi & Misi</a>
-              <a href="./pricing-cards.html" class="dropdown-item ">Biro Masjid</a>
-              <a href="./pricing-cards.html" class="dropdown-item ">Jawatankuasa Masjid</a>
-              <a href="./pricing-cards.html" class="dropdown-item ">Pencapaian Masjid</a>
+              <a href="./sejarah" class="dropdown-item ">Sejarah Penubuhan</a>
+              <a href="./visi" class="dropdown-item ">Visi & Misi</a>
+              <a href="./biro" class="dropdown-item ">Biro Masjid</a>
+              <a href="./jawatankuasa" class="dropdown-item ">Jawatankuasa Masjid</a>
+              <a href="./pencapaian" class="dropdown-item ">Pencapaian Masjid</a>
             </div>
           </li>
 
           <li class="nav-item dropdown">
             <a href="\student" class="nav-link {{(Request::is('student') ? 'active' : '')}}" data-toggle="dropdown" href="javascript:void(0)" ><i class="fe fe-life-buoy"></i> Aktivti</a>
             <div class="dropdown-menu dropdown-menu-arrow">
-              <a href="./cards.html" class="dropdown-item ">Aktiviti Masjid</a>
-              <a href="./charts.html" class="dropdown-item ">Jadual Kuliah</a>
+              <a href="./aktiviti" class="dropdown-item ">Aktiviti Masjid</a>
+              <a href="./jadual" class="dropdown-item ">Jadual Kuliah</a>
             </div>
           </li>
           <li class="nav-item">
-            <a href="\contact" class="nav-link {{(Request::is('contact') ? 'active' : '')}}"><i class="fe fe-radio"></i> Ahli Kariah</a>
+            <a href="\ahli" class="nav-link {{(Request::is('contact') ? 'active' : '')}}"><i class="fe fe-radio"></i> Ahli Kariah</a>
           </li>
           <li class="nav-item">
-            <a href="\donate" class="nav-link {{(Request::is('donate') ? 'active' : '')}}" ><i class="fe fe-monitor"></i> Galeri</a>
+            <a href="\galeri" class="nav-link {{(Request::is('donate') ? 'active' : '')}}" ><i class="fe fe-monitor"></i> Galeri</a>
           </li>
           <li class="nav-item">
             <a href="\login" class="nav-link {{(Request::is('login') ? 'active' : '')}}" ><i class="fe fe-user"></i> Admin</a>

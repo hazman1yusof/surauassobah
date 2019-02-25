@@ -1,6 +1,6 @@
 @extends('setup.layout')
 
-@section('title', 'Social Media Setup')
+@section('title', 'Ceramah Setup')
 
 @section('body')
 	
@@ -17,20 +17,21 @@
                 <th>Tarikh</th>
                 <th>Link Youtube</th>
                 <th>Link Facebook</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
             @foreach($ceramahs as $ceramah)
             <tr>
-            	<th>{{$ceramah->id}}</th>
-            	<th>{{$ceramah->month}}</th>
-            	<th>{{$ceramah->penceramah}}</th>
-            	<th>{{$ceramah->tajuk}}</th>
-            	<th>{{$ceramah->ms}}</th>
-            	<th>{{$ceramah->waktu}}</th>
-            	<th>{{$ceramah->tarikh}}</th>
-            	<th>{{$ceramah->linkyoutube}}</th>
-            	<th>{{$ceramah->linkfacebook}}</th>
+            	<td>{{$ceramah->id}}</td>
+            	<td>{{$ceramah->month}}</td>
+            	<td>{{$ceramah->penceramah}}</td>
+            	<td>{{$ceramah->tajuk}}</td>
+            	<td>{{$ceramah->ms}}</td>
+            	<td>{{$ceramah->waktu}}</td>
+            	<td>{{$ceramah->tarikh}}</td>
+            	<td>{{$ceramah->linkyoutube}}</td>
+            	<td>{{$ceramah->linkfacebook}}</td>
                 <td></td>
             </tr>
             @endforeach
@@ -54,8 +55,22 @@
 	          @csrf
 
 			  <div class="form-group">
-			    <label for="socmed_name">Month</label>
-			    <input type="text" class="form-control" id="socmed_name" name="socmed_name" placeholder="Name" required>
+			    <label for="month">Month</label>
+			     <select name="month" class="form-control custom-select" required>
+                  <option value="">Month</option>
+                  <option value="1">January</option>
+                  <option value="2">February</option>
+                  <option value="3">March</option>
+                  <option value="4">April</option>
+                  <option value="5">May</option>
+                  <option value="6">June</option>
+                  <option value="7">July</option>
+                  <option value="8">August</option>
+                  <option value="9">September</option>
+                  <option value="10">October</option>
+                  <option value="11">November</option>
+                  <option value="12">December</option>
+                </select>
 			  </div>
 
 			  <div class="form-group">
@@ -75,7 +90,7 @@
 
 			  <div class="form-group">
 			    <label for="waktu">Waktu</label>
-				    <select name="waktu" id="waktu" class="form-control">
+				    <select name="waktu" class="form-control">
 					  <option value ="Dhuha">Dhuha</option>
 					  <option value ="Maghrib">Maghrib</option>
 					  <option value ="Subuh">Subuh</option>

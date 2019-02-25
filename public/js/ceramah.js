@@ -63,8 +63,14 @@ function delete_form(id){
 }
 
 function populateFormdata(form,rowdata){
-	$('#socmed_name').val(rowdata[1]);
-	$('#socmed_desc').val(decodeEntities(rowdata[2]));
+  $("select[name=month]").val(rowdata[1]);
+	$('#penceramah').val(rowdata[2]);
+  $('#tajuk').val(rowdata[3]);
+  $('#ms').val(rowdata[4]);
+  $('select[name=waktu]').val(rowdata[5]);
+  $('#tarikh').val(rowdata[6]);
+  $('#linkyoutube').val(rowdata[7]);
+  $('#linkfacebook').val(rowdata[8]);
 }
 
 var decodeEntities = (function() {

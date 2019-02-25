@@ -17,7 +17,7 @@ class CeramahController extends Controller{
 
     public function view(Request $request){ 
         $ceramahs = DB::table('ceramah')
-                    ->where("month",'=', Carbon::now()->format('M') )
+                    ->where("month",'=', Carbon::now()->month )
                     ->orderBy('id', 'desc')->get();
 
         return view('setup/ceramah',compact('ceramahs'));
@@ -42,10 +42,14 @@ class CeramahController extends Controller{
 
         	DB::table('ceramah')
         		->insert([
-        			'name' => $request->name,
-        			'ic' => $request->ic,
-                    'telno' => $request->telno,
-                    'alamat' => $request->alamat
+                    'month' => $request->month,
+                    'penceramah' => $request->penceramah,
+                    'tajuk' => $request->tajuk,
+                    'ms' => $request->ms,
+                    'waktu' => $request->waktu,
+                    'tarikh' => $request->tarikh,
+                    'linkyoutube' => $request->linkyoutube,
+                    'linkfacebook' => $request->linkfacebook,
         		]);
 
         	DB::commit();
@@ -67,10 +71,15 @@ class CeramahController extends Controller{
 
             DB::table('ceramah')->where('id','=',$request->id)
                 ->update([
-                    'name' => $request->name,
-                    'ic' => $request->ic,
-                    'telno' => $request->telno,
-                    'alamat' => $request->alamat
+                    'id' => $request->id,
+                    'month' => $request->month,
+                    'penceramah' => $request->penceramah,
+                    'tajuk' => $request->tajuk,
+                    'ms' => $request->ms,
+                    'waktu' => $request->waktu,
+                    'tarikh' => $request->tarikh,
+                    'linkyoutube' => $request->linkyoutube,
+                    'linkfacebook' => $request->linkfacebook,
                 ]);
 
             DB::commit();
