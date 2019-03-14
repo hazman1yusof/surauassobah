@@ -25,11 +25,14 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {   
+
+        $month = Carbon::now()->month;
         if(empty($request->selMonth)){
             $ceramahs = DB::table('ceramah')
                 ->where("month",'=', Carbon::now()->month )
                 ->orderBy('id', 'desc')->get();
         }else{
+            $month = $request->selMonth;
             $ceramahs = DB::table('ceramah')
                 ->where("month",'=', $request->selMonth )
                 ->orderBy('id', 'desc')->get();
@@ -48,8 +51,9 @@ class HomeController extends Controller
             $ceramah->mukasurat = $this->ms($ceramah->ms);
             $ceramah->percent = $this->percent($ceramah->ms);
         }
+        // dd($ceramahs);
 
-        return view('home',compact('ceramahs'));
+        return view('home',compact('ceramahs','month'));
     }
 
     public function firstLetter($str){

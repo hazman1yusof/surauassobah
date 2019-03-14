@@ -23,6 +23,21 @@ Route::get('/logout', "SessionController@destroy");
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/ahli', 'AhliController@index')->name('ahli');
+
+Route::get('/sejarah', 'InfoController@sejarah');
+Route::get('/visi', 'InfoController@visi');
+Route::get('/biro', 'InfoController@biro');
+Route::get('/jawatankuasa', 'InfoController@jawatankuasa');
+Route::get('/pencapaian', 'InfoController@pencapaian');
+
+
+Route::get('/aktiviti', 'InfoController@aktiviti');
+Route::get('/jadual', 'InfoController@jadual');
+
+
+Route::get('/galeri', 'InfoController@galeri');
+
 
 
 
